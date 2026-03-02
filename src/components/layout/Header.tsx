@@ -41,7 +41,7 @@ export function Header() {
         className={cn(
           'fixed top-0 left-0 right-0 z-40 transition-all duration-300',
           isScrolled 
-            ? 'bg-black/95 backdrop-blur-md border-b border-white/10' 
+            ? 'bg-background/95 backdrop-blur-md border-b border-white/10' 
             : 'bg-transparent'
         )}
       >
@@ -50,9 +50,9 @@ export function Header() {
             {/* Logo */}
             <Link 
               href="/" 
-              className="text-2xl font-bold text-white hover:text-accent transition-colors"
+              className="text-2xl text-cinematic text-white hover:text-accent transition-colors glitch-text"
             >
-              Sector Z
+              SECTOR Z
             </Link>
 
             {/* Desktop Navigation */}
@@ -61,7 +61,7 @@ export function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-white hover:text-accent transition-colors text-sm font-medium"
+                  className="nav-link-glitch text-white hover:text-accent transition-colors text-sm font-medium tracking-wide"
                 >
                   {item.name}
                 </Link>
@@ -101,13 +101,13 @@ export function Header() {
 
           {/* Mobile Navigation */}
           {isMobileMenuOpen && (
-            <div className="lg:hidden border-t border-white/10 bg-black/95 backdrop-blur-md">
+            <div className="lg:hidden border-t border-white/10 bg-background/95 backdrop-blur-md">
               <div className="px-2 pt-2 pb-3 space-y-1">
                 {navigation.map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="block px-3 py-2 text-white hover:text-accent transition-colors text-base font-medium"
+                    className="block px-3 py-2 nav-link-glitch text-white hover:text-accent transition-colors text-base font-medium"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {item.name}

@@ -185,7 +185,7 @@ export function DevlogReelSection({ prefersReducedMotion }: DevlogReelSectionPro
               <p className="text-gray-300 mb-6 leading-relaxed">
                 Dive deeper into our creative process and development journey.
               </p>
-              <button className="bg-accent text-black px-6 py-3 rounded-full font-medium hover:bg-accent-hover transition-colors">
+              <button className="bg-accent text-black px-6 py-3 rounded-sm font-semibold hover:bg-accent-hover transition-colors">
                 View Full Devlog
               </button>
             </div>
