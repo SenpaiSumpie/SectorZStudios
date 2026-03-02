@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { cn } from '@/lib/utils';
 
 interface SharpSystemsSectionProps {
   prefersReducedMotion: boolean;
@@ -99,7 +100,7 @@ export function SharpSystemsSection({ prefersReducedMotion }: SharpSystemsSectio
   return (
     <section
       ref={sectionRef}
-      className="scroll-section relative min-h-screen bg-gray-900 py-20 lg:py-32"
+      className="scroll-section relative min-h-screen bg-gray-900 py-20 lg:py-32 atmosphere"
       aria-label="Sharp Systems section"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -120,7 +121,10 @@ export function SharpSystemsSection({ prefersReducedMotion }: SharpSystemsSectio
           {features.map((feature, index) => (
             <div
               key={index}
-              className="feature-card bg-black border border-gray-800 rounded-lg overflow-hidden will-change-transform"
+              className={cn(
+                'feature-card scan-line-hover bg-black border border-gray-800 rounded-lg overflow-hidden will-change-transform',
+                index === 0 && 'lg:col-span-2'
+              )}
             >
               <div className="aspect-video bg-gray-800 overflow-hidden">
                 <img

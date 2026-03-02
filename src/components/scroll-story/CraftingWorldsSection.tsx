@@ -107,7 +107,7 @@ export function CraftingWorldsSection({ prefersReducedMotion }: CraftingWorldsSe
   return (
     <section
       ref={sectionRef}
-      className="scroll-section relative min-h-screen overflow-hidden bg-black"
+      className="scroll-section relative min-h-screen overflow-hidden bg-black atmosphere"
       aria-label="Crafting Worlds section"
     >
       {/* Parallax Background Layers */}
@@ -152,7 +152,7 @@ export function CraftingWorldsSection({ prefersReducedMotion }: CraftingWorldsSe
         className="relative z-10 min-h-screen flex items-center"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="max-w-3xl">
+          <div className="max-w-3xl lg:max-w-[40%]">
             <div className="copy-block mb-8">
               <h2 className="text-cinematic text-4xl md:text-5xl lg:text-6xl text-white mb-6">
                 <span className="accent-underline">Crafting</span> Worlds

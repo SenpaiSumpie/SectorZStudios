@@ -118,15 +118,16 @@ export function HeroSection({ prefersReducedMotion }: HeroSectionProps) {
       </video>
 
       {/* Vignette Overlay */}
-      <div className="hero-vignette absolute inset-0 bg-gradient-radial from-transparent via-black/20 to-black/60 pointer-events-none" />
+      <div className="hero-vignette absolute inset-0 bg-gradient-radial from-transparent via-black/30 to-black/70 pointer-events-none" />
 
       {/* Content */}
-      <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
+      <div className="relative z-10 text-center lg:text-left max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center min-h-screen">
+        <div className="max-w-3xl">
         <h1
           ref={headlineRef}
           className="text-cinematic text-4xl md:text-6xl lg:text-7xl text-white mb-6 leading-tight"
         >
-          <div className="flex flex-wrap justify-center gap-2">
+          <div className="flex flex-wrap justify-center lg:justify-start gap-2 lg:gap-3">
             {headlineWords.map((word, index) => (
               <span key={index} className="word-reveal">
                 <span className="word-reveal__inner">{word}</span>
@@ -135,9 +136,10 @@ export function HeroSection({ prefersReducedMotion }: HeroSectionProps) {
           </div>
         </h1>
         
-        <p className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
           Step inside our world where every shadow tells a story and every choice echoes through reality.
         </p>
+        </div>
       </div>
 
       {/* Scroll Indicator */}

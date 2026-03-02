@@ -102,7 +102,7 @@ export function FinalCTASection({ prefersReducedMotion }: FinalCTASectionProps) 
   return (
     <section
       ref={sectionRef}
-      className="scroll-section relative min-h-screen overflow-hidden bg-black"
+      className="scroll-section relative min-h-screen overflow-hidden bg-black atmosphere"
       aria-label="Final CTA section"
     >
       {/* Background */}
@@ -139,7 +139,7 @@ export function FinalCTASection({ prefersReducedMotion }: FinalCTASectionProps) 
           {/* CTA Content */}
           <div ref={ctaRef} className="space-y-8">
             <div>
-              <h2 className="text-2xl md:text-3xl text-white mb-4 font-bold">
+              <h2 className="text-cinematic text-2xl md:text-3xl text-white mb-4">
                 Your journey into fear begins here
               </h2>
               <p className="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">

@@ -143,7 +143,8 @@ export function DevlogReelSection({ prefersReducedMotion }: DevlogReelSectionPro
           {devlogPosts.map((post, index) => (
             <div
               key={index}
-              className="horizontal-scroll__item devlog-card bg-gray-900 border border-gray-800 rounded-lg overflow-hidden hover-lift will-change-transform"
+              className="horizontal-scroll__item devlog-card scan-line-hover bg-gray-900 border border-gray-800 rounded-lg overflow-hidden hover-lift will-change-transform"
+              style={{ transform: `rotate(${index % 2 === 0 ? 1 : -1}deg)` }}
             >
               <div className="aspect-video bg-gray-800 overflow-hidden">
                 <img
