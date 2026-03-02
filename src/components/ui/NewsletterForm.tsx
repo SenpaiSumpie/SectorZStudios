@@ -102,10 +102,10 @@ export function NewsletterForm({
 	if (state.isSubmitted) {
 		return (
 			<div className={cn('space-y-4', className)}>
-				<div className="text-center p-6 bg-green-900/20 border border-green-500/30 rounded-lg">
-					<div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+				<div className="text-center p-6 bg-accent-muted border border-accent/30">
+					<div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
 						<svg
-							className="w-6 h-6 text-white"
+							className="w-6 h-6 text-foreground"
 							fill="none"
 							stroke="currentColor"
 							viewBox="0 0 24 24"
@@ -118,10 +118,10 @@ export function NewsletterForm({
 							/>
 						</svg>
 					</div>
-					<h3 className="text-lg font-semibold text-white mb-2">
+					<h3 className="text-lg font-semibold text-foreground mb-2">
 						Successfully Subscribed!
 					</h3>
-					<p className="text-gray-300 text-sm">
+					<p className="text-foreground/70 text-sm">
 						Thank you for subscribing. You&apos;ll receive our latest updates and
 						exclusive content.
 					</p>
@@ -134,8 +134,8 @@ export function NewsletterForm({
 		<div className={cn('space-y-4', className)}>
 			{!inline && (
 				<>
-					<h3 className="text-xl font-bold text-white">{title}</h3>
-					<p className="text-gray-400">{description}</p>
+					<h3 className="text-xl font-bold text-foreground">{title}</h3>
+					<p className="text-muted">{description}</p>
 				</>
 			)}
 
@@ -155,8 +155,8 @@ export function NewsletterForm({
 						placeholder={placeholder}
 						disabled={state.isSubmitting}
 						className={cn(
-							'w-full px-4 py-3 bg-gray-800 border rounded-md text-white placeholder-gray-400 transition-colors focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent disabled:opacity-50 disabled:cursor-not-allowed',
-							state.error ? 'border-red-500 focus:ring-red-500' : 'border-gray-700'
+							'w-full px-4 py-3 bg-surface border text-foreground placeholder-gray-400 transition-colors focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent disabled:opacity-50 disabled:cursor-not-allowed',
+							state.error ? 'border-red-500 focus:ring-red-500' : 'border-border'
 						)}
 						aria-invalid={!!state.error}
 						aria-describedby={state.error ? 'email-error' : undefined}
@@ -190,7 +190,7 @@ export function NewsletterForm({
 			</form>
 
 			{!inline && (
-				<p className="text-gray-500 text-sm">
+				<p className="text-muted text-sm">
 					No spam, unsubscribe anytime. We respect your privacy.
 				</p>
 			)}

@@ -12,7 +12,7 @@ interface GamesBeatProps {
 
 export function GamesBeat({ prefersReducedMotion }: GamesBeatProps) {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const gameRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const gameRefs = useRef<(HTMLElement | null)[]>([]);
 
   useEffect(() => {
     if (prefersReducedMotion || !sectionRef.current) return;
