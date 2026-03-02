@@ -60,7 +60,7 @@ export function DevlogReelSection({ prefersReducedMotion }: DevlogReelSectionPro
               start: 'left right',
               end: 'right left',
               horizontal: true,
-              containerAnimation: gsap.getProperty(scrollContainer, 'x'),
+              containerAnimation: gsap.getProperty(scrollContainer, 'x') as unknown as GSAPAnimation,
               toggleActions: 'play none none reverse',
             }
           }
