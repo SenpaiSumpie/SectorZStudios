@@ -3,6 +3,9 @@ import { Dela_Gothic_One, DM_Sans } from 'next/font/google';
 import './globals.css';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
+import { CustomCursor } from '@/components/ui/CustomCursor';
+import { EmberParticles } from '@/components/ui/EmberParticles';
+import { PageRevealWrapper } from '@/components/ui/PageRevealWrapper';
 
 const delaGothic = Dela_Gothic_One({
 	variable: '--font-display',
@@ -45,9 +48,13 @@ export default function RootLayout({
 	return (
 		<html lang="en" className="scroll-smooth">
 			<body className={`${delaGothic.variable} ${dmSans.variable} font-sans antialiased`}>
-				<Header />
-				<main id="main-content">{children}</main>
-				<Footer />
+				<PageRevealWrapper>
+					<Header />
+					<main id="main-content">{children}</main>
+					<Footer />
+				</PageRevealWrapper>
+				<CustomCursor />
+				<EmberParticles />
 			</body>
 		</html>
 	);
