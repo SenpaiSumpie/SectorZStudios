@@ -2,122 +2,119 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 
 const navigation = [
-  { name: 'Home', href: '/' },
-  { name: 'Games', href: '/games' },
-  { name: 'Studio', href: '/studio' },
-  { name: 'Devlog', href: '/devlog' },
-  { name: 'Careers', href: '/careers' },
-  { name: 'Community', href: '/community' },
-  { name: 'Contact', href: '/contact' },
+	{ name: 'Games', href: '/games' },
+	{ name: 'Devlog', href: '/devlog' },
+	{ name: 'Studio', href: '/studio' },
+	{ name: 'Careers', href: '/careers' },
 ];
 
 export function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+	const [isScrolled, setIsScrolled] = useState(false);
+	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+	const pathname = usePathname();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+	useEffect(() => {
+		const handleScroll = () => {
+			setIsScrolled(window.scrollY > 100);
+		};
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+		window.addEventListener('scroll', handleScroll, { passive: true });
+		return () => window.removeEventListener('scroll', handleScroll);
+	}, []);
 
-  return (
-    <>
-      {/* Skip to main content link for accessibility */}
-      <a
-        href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-accent text-black px-4 py-2 rounded-md z-50"
-      >
-        Skip to main content
-      </a>
-      
-      <header
-        className={cn(
-          'fixed top-0 left-0 right-0 z-40 transition-all duration-300',
-          isScrolled 
-            ? 'bg-background/95 backdrop-blur-md border-b border-white/10' 
-            : 'bg-transparent'
-        )}
-      >
-        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 lg:h-20">
-            {/* Logo */}
-            <Link 
-              href="/" 
-              className="text-2xl text-cinematic text-white hover:text-accent transition-colors glitch-text"
-            >
-              SECTOR Z
-            </Link>
+	useEffect(() => {
+		setIsMobileMenuOpen(false);
+	}, [pathname]);
 
-            {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-8">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="nav-link-glitch text-white hover:text-accent transition-colors text-sm font-medium tracking-wide"
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
+	return (
+		<header
+			className={cn(
+				'fixed top-0 left-0 right-0 z-40 transition-all duration-500',
+				isScrolled
+					? 'bg-background/80 backdrop-blur-md'
+					: 'bg-transparent'
+			)}
+		>
+			<nav className="max-w-7xl mx-auto px-6 lg:px-8">
+				<div className="flex items-center justify-between h-16 lg:h-20">
+					<Link
+						href="/"
+						className="text-display text-xl lg:text-2xl text-foreground hover:text-accent transition-colors duration-200"
+					>
+						SECTOR Z
+					</Link>
 
-            {/* Mobile menu button */}
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2 text-white hover:text-accent transition-colors"
-              aria-label="Toggle mobile menu"
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                {isMobileMenuOpen ? (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                ) : (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                )}
-              </svg>
-            </button>
-          </div>
+					<div className="hidden lg:flex items-center gap-8">
+						{navigation.map((item) => (
+							<Link
+								key={item.name}
+								href={item.href}
+								className={cn(
+									'nav-link text-sm font-medium tracking-wide',
+									pathname.startsWith(item.href) && 'nav-link--active'
+								)}
+							>
+								{item.name}
+							</Link>
+						))}
+					</div>
 
-          {/* Mobile Navigation */}
-          {isMobileMenuOpen && (
-            <div className="lg:hidden border-t border-white/10 bg-background/95 backdrop-blur-md">
-              <div className="px-2 pt-2 pb-3 space-y-1">
-                {navigation.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    className="block px-3 py-2 nav-link-glitch text-white hover:text-accent transition-colors text-base font-medium"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          )}
-        </nav>
-      </header>
-    </>
-  );
+					<button
+						onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+						className="lg:hidden p-2 text-foreground hover:text-accent transition-colors"
+						aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+					>
+						<svg
+							className="w-6 h-6"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+						>
+							{isMobileMenuOpen ? (
+								<path
+									strokeLinecap="round"
+									strokeLinejoin="round"
+									strokeWidth={1.5}
+									d="M6 18L18 6M6 6l12 12"
+								/>
+							) : (
+								<path
+									strokeLinecap="round"
+									strokeLinejoin="round"
+									strokeWidth={1.5}
+									d="M4 6h16M4 12h16M4 18h16"
+								/>
+							)}
+						</svg>
+					</button>
+				</div>
+			</nav>
+
+			{isMobileMenuOpen && (
+				<div className="lg:hidden fixed inset-0 top-16 bg-background/98 backdrop-blur-lg z-50">
+					<div className="flex flex-col items-center justify-center h-full gap-8">
+						{navigation.map((item) => (
+							<Link
+								key={item.name}
+								href={item.href}
+								className={cn(
+									'text-display text-3xl transition-colors duration-200',
+									pathname.startsWith(item.href)
+										? 'text-accent'
+										: 'text-foreground hover:text-accent'
+								)}
+								onClick={() => setIsMobileMenuOpen(false)}
+							>
+								{item.name}
+							</Link>
+						))}
+					</div>
+				</div>
+			)}
+		</header>
+	);
 }
