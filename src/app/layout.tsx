@@ -1,11 +1,18 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Dela_Gothic_One, DM_Sans } from 'next/font/google';
 import './globals.css';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 
-const inter = Inter({
-	variable: '--font-inter',
+const delaGothic = Dela_Gothic_One({
+	variable: '--font-display',
+	weight: '400',
+	subsets: ['latin'],
+	display: 'swap',
+});
+
+const dmSans = DM_Sans({
+	variable: '--font-body',
 	subsets: ['latin'],
 	display: 'swap',
 });
@@ -37,7 +44,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en" className="scroll-smooth">
-			<body className={`${inter.variable} font-sans antialiased bg-black text-white`}>
+			<body className={`${delaGothic.variable} ${dmSans.variable} font-sans antialiased`}>
 				<Header />
 				<main id="main-content">{children}</main>
 				<Footer />
