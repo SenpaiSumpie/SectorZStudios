@@ -15,12 +15,12 @@ const team = [
 ];
 
 const artworks = [
-  '/images/studio/concept-01.jpg',
-  '/images/studio/concept-02.jpg',
-  '/images/studio/concept-03.jpg',
-  '/images/studio/concept-04.jpg',
-  '/images/studio/concept-05.jpg',
-  '/images/studio/concept-06.jpg',
+  '/images/studio/concept-01.png',
+  '/images/studio/concept-02.png',
+  '/images/studio/concept-03.png',
+  '/images/studio/concept-04.png',
+  '/images/studio/concept-05.png',
+  '/images/studio/concept-06.png',
 ];
 
 export default function StudioPage() {

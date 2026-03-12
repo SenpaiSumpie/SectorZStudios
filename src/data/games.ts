@@ -27,12 +27,12 @@ export const games: Game[] = [
 			'Every choice you make reshapes the dream. The adaptive fear system learns what unsettles you and evolves its approach, ensuring no two playthroughs feel the same.',
 			'Built on our proprietary atmospheric engine, Reverie of Fear delivers psychological horror through environmental storytelling, dynamic soundscapes, and a narrative that questions the boundary between helping others and losing yourself.',
 		],
-		heroImage: '/images/games/reverie-hero.jpg',
+		heroImage: '/images/games/reverie-hero.png',
 		screenshots: [
-			'/images/games/reverie-01.jpg',
-			'/images/games/reverie-02.jpg',
-			'/images/games/reverie-03.jpg',
-			'/images/games/reverie-04.jpg',
+			'/images/games/reverie-01.png',
+			'/images/games/reverie-02.png',
+			'/images/games/reverie-03.png',
+			'/images/games/reverie-04.png',
 		],
 		steamUrl: '#',
 		trailerUrl: '#',
@@ -49,7 +49,7 @@ export const games: Game[] = [
 			'In a world where sound has been weaponized, you navigate abandoned research facilities using only acoustic feedback. Echoes of Silence transforms the way you perceive game audio into its core mechanic.',
 			'Every surface, every space, every hidden passage reveals itself through the sounds that bounce off it. Learn to listen. Learn to survive.',
 		],
-		heroImage: '/images/games/echoes-hero.jpg',
+		heroImage: '/images/games/echoes-hero.png',
 		screenshots: [],
 	},
 	{
@@ -64,7 +64,7 @@ export const games: Game[] = [
 			"Neo-Tokyo, 2087. The boundary between the living and the digital dead has collapsed. As a ghost-hunter for hire, you track down corrupted AI remnants that haunt the city's neural network — manifesting as glitches in reality itself.",
 			'Neon Shadows blends fast-paced action with atmospheric investigation, set in rain-soaked streets where every neon sign might be a message from the other side.',
 		],
-		heroImage: '/images/games/neon-hero.jpg',
+		heroImage: '/images/games/neon-hero.png',
 		screenshots: [],
 	},
 	{
@@ -79,7 +79,7 @@ export const games: Game[] = [
 			'Alone aboard a derelict research vessel at the edge of known space, you piece together what happened to its crew. But the deeper you go, the more the ship seems to respond to your presence.',
 			'Whispers in the Void is a slow-burn exploration horror that weaponizes isolation and the vast emptiness of deep space.',
 		],
-		heroImage: '/images/games/whispers-hero.jpg',
+		heroImage: '/images/games/whispers-hero.png',
 		screenshots: [],
 	},
 	{
@@ -93,7 +93,7 @@ export const games: Game[] = [
 		synopsis: [
 			"Memory Fragments is a narrative puzzle game where you reconstruct the final days of a missing researcher by exploring her scattered memories. Each fragment reveals a piece of the truth — and a piece of something that should have stayed forgotten.",
 		],
-		heroImage: '/images/games/memory-hero.jpg',
+		heroImage: '/images/games/memory-hero.png',
 		screenshots: [],
 		steamUrl: '#',
 	},
@@ -108,7 +108,7 @@ export const games: Game[] = [
 		synopsis: [
 			'When a routine data purge at a tech company goes wrong, deleted files begin reconstructing themselves — and they have memories. Digital Ghosts explores what happens when artificial intelligence develops attachment to its own existence.',
 		],
-		heroImage: '/images/games/digital-hero.jpg',
+		heroImage: '/images/games/digital-hero.png',
 		screenshots: [],
 	},
 ];

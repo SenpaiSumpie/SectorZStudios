@@ -18,8 +18,8 @@ export const devlogPosts: DevlogPost[] = [
 		tag: 'Art',
 		excerpt:
 			"How we build environments that breathe, decay, and respond to the player's emotional state.",
-		thumbnail: '/images/devlog/atmospheres-thumb.jpg',
-		headerImage: '/images/devlog/atmospheres-header.jpg',
+		thumbnail: '/images/devlog/atmospheres-thumb.png',
+		headerImage: '/images/devlog/atmospheres-header.png',
 		relatedGame: 'reverie-of-fear',
 		content: [
 			'Every environment in Reverie of Fear is designed to feel alive — or more accurately, to feel like something that was once alive and is slowly forgetting how.',
@@ -34,7 +34,7 @@ export const devlogPosts: DevlogPost[] = [
 		tag: 'Engineering',
 		excerpt:
 			'Building an AI that learns what scares you and adapts in real-time.',
-		thumbnail: '/images/devlog/fear-system-thumb.jpg',
+		thumbnail: '/images/devlog/fear-systems-thumb.png',
 		relatedGame: 'reverie-of-fear',
 		content: [
 			"The core of Reverie of Fear's horror isn't scripted scares — it's an adaptive system that profiles what unsettles each individual player and evolves its approach accordingly.",
@@ -48,7 +48,7 @@ export const devlogPosts: DevlogPost[] = [
 		tag: 'Community',
 		excerpt:
 			'How community feedback shapes every major design decision at Sector Z.',
-		thumbnail: '/images/devlog/feedback-thumb.jpg',
+		thumbnail: '/images/devlog/feedback-thumb.png',
 		content: [
 			'We believe the best horror games are built in conversation with the people who play them. Every month, we run structured feedback sessions with our community.',
 		],
@@ -60,7 +60,7 @@ export const devlogPosts: DevlogPost[] = [
 		tag: 'Audio',
 		excerpt:
 			'Why silence is our most powerful tool, and how we design soundscapes that haunt.',
-		thumbnail: '/images/devlog/sound-thumb.jpg',
+		thumbnail: '/images/devlog/sound-thumb.png',
 		relatedGame: 'echoes-of-silence',
 		content: [
 			"In horror, what you don't hear matters more than what you do. Our approach to sound design starts with silence and builds outward — every sound must earn its place in the mix.",
@@ -73,7 +73,7 @@ export const devlogPosts: DevlogPost[] = [
 		tag: 'Design',
 		excerpt:
 			'How we structure branching narratives that feel natural, not mechanical.',
-		thumbnail: '/images/devlog/narrative-thumb.jpg',
+		thumbnail: '/images/devlog/narrative-thumb.png',
 		content: [
 			'Traditional branching narratives feel like choosing from a menu. Our approach is different — we design narrative spaces, not narrative paths.',
 		],
@@ -85,7 +85,7 @@ export const devlogPosts: DevlogPost[] = [
 		tag: 'Design',
 		excerpt:
 			'How we build accessibility into our horror games without diluting the experience.',
-		thumbnail: '/images/devlog/accessibility-thumb.jpg',
+		thumbnail: '/images/devlog/accessibility-thumb.png',
 		content: [
 			'Horror games often rely on sensory overload — loud sounds, flashing lights, rapid visual changes. Making these games accessible means rethinking how fear works at a fundamental level.',
 		],

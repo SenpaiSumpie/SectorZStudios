@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Instrument_Serif } from 'next/font/google';
+import { Instrument_Serif, Bebas_Neue } from 'next/font/google';
 import { GeistSans } from 'geist/font/sans';
 import './globals.css';
 import { Header } from '@/components/layout/Header';
@@ -9,6 +9,13 @@ import { DustMotes } from '@/components/ui/DustMotes';
 
 const instrumentSerif = Instrument_Serif({
 	variable: '--font-heading',
+	weight: '400',
+	subsets: ['latin'],
+	display: 'swap',
+});
+
+const bebasNeue = Bebas_Neue({
+	variable: '--font-brand',
 	weight: '400',
 	subsets: ['latin'],
 	display: 'swap',
@@ -41,7 +48,7 @@ export default function RootLayout({
 	return (
 		<html lang="en" className="scroll-smooth">
 			<body
-				className={`${instrumentSerif.variable} ${GeistSans.variable} font-sans antialiased`}
+				className={`${instrumentSerif.variable} ${GeistSans.variable} ${bebasNeue.variable} font-sans antialiased`}
 			>
 				<a
 					href="#main-content"

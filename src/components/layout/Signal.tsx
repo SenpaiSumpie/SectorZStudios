@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { NewsletterForm } from '@/components/ui/NewsletterForm';
+import { games } from '@/data/games';
 
 const socialLinks = [
 	{
@@ -33,64 +33,152 @@ const socialLinks = [
 			</svg>
 		),
 	},
+	{
+		name: 'Instagram',
+		href: '#',
+		icon: (
+			<svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+				<path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+			</svg>
+		),
+	},
+];
+
+const gameLinks = games.map((g) => ({
+	title: g.title,
+	href: `/games/${g.slug}`,
+}));
+
+const studioLinks = [
+	{ title: 'About the Studio', href: '/studio' },
+	{ title: 'News & Devlog', href: '/devlog' },
+	{ title: 'Open Positions', href: '/careers' },
+	{ title: 'Contact', href: '/contact' },
+	{ title: 'Press Kit', href: '/press' },
 ];
 
 export function Signal() {
 	return (
 		<footer className="relative border-t border-border bg-surface">
 			<div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-20">
-				{/* Signal Header */}
-				<div className="text-center mb-12">
-					<p className="text-accent text-sm font-medium tracking-widest uppercase mb-3">
-						The Signal
-					</p>
-					<h2 className="text-display text-3xl lg:text-4xl text-foreground">
-						Stay connected
-					</h2>
-				</div>
+				{/* Main Grid */}
+				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-16 lg:gap-8">
+					{/* Games Column */}
+					<div className="lg:col-span-1 mb-2">
+						<h3 className="text-sm font-medium tracking-widest uppercase text-foreground mb-6">
+							Games
+						</h3>
+						<ul className="space-y-4">
+							{gameLinks.map((link) => (
+								<li key={link.href}>
+									<Link
+										href={link.href}
+										className="text-muted text-sm hover:text-foreground transition-colors duration-200"
+									>
+										{link.title}
+									</Link>
+								</li>
+							))}
+						</ul>
+					</div>
 
-				{/* Newsletter + Social */}
-				<div className="max-w-lg mx-auto space-y-8">
-					<NewsletterForm inline />
+					{/* Studio Column */}
+					<div className="lg:col-span-1">
+						<h3 className="text-sm font-medium tracking-widest uppercase text-foreground mb-6">
+							Studio
+						</h3>
+						<ul className="space-y-3">
+							{studioLinks.map((link) => (
+								<li key={link.href}>
+									<Link
+										href={link.href}
+										className="text-muted text-sm hover:text-foreground transition-colors duration-200"
+									>
+										{link.title}
+									</Link>
+								</li>
+							))}
+						</ul>
+					</div>
 
-					{/* Social Links */}
-					<div className="flex items-center justify-center gap-6">
-						{socialLinks.map((social) => (
-							<a
-								key={social.name}
-								href={social.href}
-								className="text-muted hover:text-accent transition-colors duration-200"
-								aria-label={social.name}
-							>
-								{social.icon}
-							</a>
-						))}
+					{/* Community Column */}
+					<div className="lg:col-span-1">
+						<h3 className="text-sm font-medium tracking-widest uppercase text-foreground mb-6">
+							Community
+						</h3>
+						<ul className="space-y-4">
+							<li>
+								<a
+									href="#"
+									className="text-muted text-sm hover:text-foreground transition-colors duration-200"
+								>
+									Discord Server
+								</a>
+							</li>
+							<li>
+								<a
+									href="#"
+									className="text-muted text-sm hover:text-foreground transition-colors duration-200"
+								>
+									Newsletter
+								</a>
+							</li>
+							<li>
+								<a
+									href="#"
+									className="text-muted text-sm hover:text-foreground transition-colors duration-200"
+								>
+									Bug Reports
+								</a>
+							</li>
+							<li>
+								<a
+									href="#"
+									className="text-muted text-sm hover:text-foreground transition-colors duration-200"
+								>
+									Support
+								</a>
+							</li>
+						</ul>
+					</div>
+
+					{/* Follow Us Column */}
+					<div className="lg:col-span-1">
+						<h3 className="text-sm font-medium tracking-widest uppercase text-foreground mb-6">
+							Follow Us
+						</h3>
+						<div className="flex items-center gap-4">
+							{socialLinks.map((social) => (
+								<a
+									key={social.name}
+									href={social.href}
+									className="text-muted hover:text-accent transition-colors duration-200"
+									aria-label={social.name}
+								>
+									{social.icon}
+								</a>
+							))}
+						</div>
 					</div>
 				</div>
 
 				{/* Bottom Bar */}
 				<div className="mt-16 pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-muted">
+					<p>&copy; {new Date().getFullYear()} Sector Z. All rights reserved.</p>
 					<div className="flex items-center gap-6">
 						<Link
-							href="/careers"
+							href="/terms"
 							className="hover:text-foreground transition-colors"
 						>
-							Careers
+							Terms & Conditions
 						</Link>
 						<Link
 							href="/privacy"
 							className="hover:text-foreground transition-colors"
 						>
-							Privacy
-						</Link>
-						<Link
-							href="/terms"
-							className="hover:text-foreground transition-colors"
-						>
-							Terms
+							Privacy Policy
 						</Link>
 					</div>
-					<p>&copy; {new Date().getFullYear()} Sector Z. All rights reserved.</p>
 				</div>
 			</div>
 		</footer>
