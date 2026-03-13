@@ -79,6 +79,60 @@ html {
 }
 
 /* ============================================
+   CHROMATIC TITLE EFFECT
+   ============================================ */
+
+.chromatic-title {
+  position: relative;
+  text-shadow:
+    0 0 20px rgba(255, 255, 255, 0.1),
+    0 4px 0 rgba(200, 200, 200, 0.15),
+    0 8px 0 rgba(160, 160, 160, 0.1),
+    0 12px 0 rgba(120, 120, 120, 0.06),
+    0 16px 12px rgba(0, 0, 0, 0.4);
+}
+
+.chromatic-title::before,
+.chromatic-title::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Red channel — offset left */
+.chromatic-title::before {
+  color: rgba(255, 60, 60, 0.7);
+  text-shadow: none;
+  transform: translate(-3px, 1px);
+  mix-blend-mode: screen;
+}
+
+/* Yellow channel — offset bottom-left */
+.chromatic-title .chromatic-yellow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: rgba(255, 220, 50, 0.6);
+  transform: translate(-1px, 3px);
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+/* Blue/cyan channel — offset right */
+.chromatic-title::after {
+  color: rgba(60, 180, 255, 0.7);
+  text-shadow: none;
+  transform: translate(3px, -1px);
+  mix-blend-mode: screen;
+}
+
+/* ============================================
    ATMOSPHERIC EFFECTS
    ============================================ */
 

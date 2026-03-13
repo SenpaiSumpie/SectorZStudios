@@ -83,9 +83,11 @@ export function VoidBeat({ prefersReducedMotion }: VoidBeatProps) {
       <div className="relative z-10 text-center px-6">
         <h1
           ref={titleRef}
-          className="text-display text-6xl sm:text-7xl md:text-8xl lg:text-[120px] text-foreground opacity-0"
+          data-text="SECTOR Z"
+          className="chromatic-title font-[family-name:var(--font-brand)] text-6xl sm:text-7xl md:text-8xl lg:text-[120px] text-foreground tracking-wider opacity-0"
         >
           SECTOR Z
+          <span className="chromatic-yellow" aria-hidden="true">SECTOR Z</span>
         </h1>
         <p
           ref={subtitleRef}
