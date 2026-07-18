@@ -18,7 +18,7 @@ export function GamesBeat({ prefersReducedMotion }: GamesBeatProps) {
     if (prefersReducedMotion || !sectionRef.current) return;
 
     const ctx = gsap.context(() => {
-      gameRefs.current.forEach((gameEl, index) => {
+      gameRefs.current.forEach((gameEl) => {
         if (!gameEl) return;
 
         const image = gameEl.querySelector('.game-bg');

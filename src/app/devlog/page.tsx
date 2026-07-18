@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { devlogPosts, allTags } from '@/data/devlog';
 import { cn } from '@/lib/utils';
 
@@ -59,12 +60,14 @@ export default function DevlogPage() {
               className="group flex gap-6 py-6 border-b border-border hover:border-accent transition-colors duration-200"
             >
               {/* Thumbnail */}
-              <div className="flex-shrink-0 w-40 lg:w-52 aspect-video bg-surface overflow-hidden hidden sm:block">
+              <div className="relative flex-shrink-0 w-40 lg:w-52 aspect-video bg-surface overflow-hidden hidden sm:block">
                 {post.thumbnail ? (
-                  <img
+                  <Image
                     src={post.thumbnail}
                     alt=""
-                    className="w-full h-full object-cover"
+                    fill
+                    sizes="(min-width: 1024px) 208px, 160px"
+                    className="object-cover"
                   />
                 ) : (
                   <div className="w-full h-full bg-surface" />

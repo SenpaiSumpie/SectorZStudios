@@ -82,7 +82,7 @@ export function NewsletterForm({
 			setTimeout(() => {
 				setState((prev) => ({ ...prev, isSubmitted: false }));
 			}, 5000);
-		} catch (error) {
+		} catch {
 			setState((prev) => ({
 				...prev,
 				isSubmitting: false,

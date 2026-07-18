@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { games, getGameBySlug } from '@/data/games';
 import { devlogPosts } from '@/data/devlog';
 import { Button } from '@/components/ui/Button';
@@ -106,12 +107,14 @@ export default async function GamePage({ params }: PageProps) {
               {game.screenshots.map((src, i) => (
                 <div
                   key={i}
-                  className="flex-shrink-0 w-[400px] lg:w-[600px] aspect-video bg-surface overflow-hidden"
+                  className="relative flex-shrink-0 w-[400px] lg:w-[600px] aspect-video bg-surface overflow-hidden"
                 >
-                  <img
+                  <Image
                     src={src}
                     alt={`${game.title} screenshot ${i + 1}`}
-                    className="w-full h-full object-cover"
+                    fill
+                    sizes="(min-width: 1024px) 600px, 400px"
+                    className="object-cover"
                   />
                 </div>
               ))}

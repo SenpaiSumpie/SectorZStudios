@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Studio — Sector Z',
@@ -46,11 +47,13 @@ export default function StudioPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-2">
             {artworks.map((src, i) => (
-              <div key={i} className="aspect-video bg-surface overflow-hidden">
-                <img
+              <div key={i} className="relative aspect-video bg-surface overflow-hidden">
+                <Image
                   src={src}
                   alt=""
-                  className="w-full h-full object-cover"
+                  fill
+                  sizes="(min-width: 1024px) 33vw, 50vw"
+                  className="object-cover"
                 />
               </div>
             ))}

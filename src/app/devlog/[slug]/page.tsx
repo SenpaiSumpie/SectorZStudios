@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { devlogPosts, getPostBySlug } from '@/data/devlog';
 import type { Metadata } from 'next';
 
@@ -32,11 +33,13 @@ export default async function DevlogPostPage({ params }: PageProps) {
       {/* Header Image */}
       {post.headerImage && (
         <div className="max-w-5xl mx-auto px-6 lg:px-8 mb-12">
-          <div className="aspect-[21/9] bg-surface overflow-hidden">
-            <img
+          <div className="relative aspect-[21/9] bg-surface overflow-hidden">
+            <Image
               src={post.headerImage}
               alt=""
-              className="w-full h-full object-cover"
+              fill
+              sizes="(max-width: 1024px) 100vw, 1024px"
+              className="object-cover"
             />
           </div>
         </div>
