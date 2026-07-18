@@ -16,6 +16,14 @@ export function Header() {
 	const [isScrolled, setIsScrolled] = useState(false);
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 	const pathname = usePathname();
+	const [prevPathname, setPrevPathname] = useState(pathname);
+
+	// Close the mobile menu on navigation; adjusting state during render
+	// avoids the extra post-navigation render an effect would cause.
+	if (pathname !== prevPathname) {
+		setPrevPathname(pathname);
+		setIsMobileMenuOpen(false);
+	}
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -25,10 +33,6 @@ export function Header() {
 		window.addEventListener('scroll', handleScroll, { passive: true });
 		return () => window.removeEventListener('scroll', handleScroll);
 	}, []);
-
-	useEffect(() => {
-		setIsMobileMenuOpen(false);
-	}, [pathname]);
 
 	return (
 		<header
