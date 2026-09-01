@@ -132,12 +132,12 @@ export function Signal() {
 								</a>
 							</li>
 							<li>
-								<a
-									href="#"
+								<Link
+									href="/support"
 									className="text-muted text-sm hover:text-foreground transition-colors duration-200"
 								>
 									Support
-								</a>
+								</Link>
 							</li>
 						</ul>
 					</div>
